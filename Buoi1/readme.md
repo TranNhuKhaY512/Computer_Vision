@@ -104,5 +104,6 @@ pip install pillow opencv-python numpy matplotlib
 - Tài liệu thực hành – ĐH Văn Lang  
 - Pillow Documentation  
 - OpenCV Documentation
+- Gonzalez, Rafael C., and Richard E. Woods. "Digital image processing." (2017).
 
 
