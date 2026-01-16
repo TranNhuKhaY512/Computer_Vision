@@ -84,6 +84,7 @@ crop_top = array[upper: lower,:,:]
 ```
 - KQ:
 <img width="918" height="155" alt="image" src="https://github.com/user-attachments/assets/219df44f-4da0-4abf-b779-43133ac23883" />
+
 ---
 
   + Cắt tiếp theo chiều ngang để lấy vùng chữ nhật:
@@ -96,6 +97,7 @@ crop_horizontal = crop_top[: ,left:right,:]
 ```
 - KQ:
 <img width="917" height="265" alt="image" src="https://github.com/user-attachments/assets/85f6d30c-5ddc-486f-ad81-67fa5a221dc5" />
+
 ---
 
   + Cắt ảnh bằng PIL với tuple (left, upper, right, lower)
@@ -105,6 +107,7 @@ crop_image = image.crop((left, upper, right, lower))
 ```
 - KQ:
 <img width="919" height="894" alt="image" src="https://github.com/user-attachments/assets/5babb723-81fc-4e45-a08e-4b6012bdf389" />
+
 ---
 
 - Thay đổi một vùng pixel cụ thể bằng cách thao tác trên mảng NumPy.
@@ -133,6 +136,7 @@ image_fn.text(xy=(0,0),text="box",fill=(0,0,0))
 ```
 - KQ:
 <img width="991" height="586" alt="image" src="https://github.com/user-attachments/assets/1e5e19d5-067a-4e79-9d38-e7ecf73869df" />
+
 ---
 
 #### 3.2 Thao tác với ảnh cơ bản với open CV (2.2.2_basic_image_manipulation_open_CV.ipynb):
