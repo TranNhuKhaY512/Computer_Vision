@@ -71,6 +71,7 @@ im_flip = image.transpose(1)
 ```
 - KQ:
 <img width="989" height="573" alt="image" src="https://github.com/user-attachments/assets/046fe3cf-8bee-4ac4-968c-7ef09c463040" />
+
 ---
 
 - Cắt ảnh bằng cách chỉ định tọa độ (left, upper, right, lower).
@@ -200,14 +201,17 @@ flip = {
 - KQ:
 - Xoay 90 độ chiều kim đồng hồ
 <img width="1043" height="823" alt="image" src="https://github.com/user-attachments/assets/24c9579f-45c3-4177-8ade-d6e85b4aaeb6" />
+
 ---
 
 - Xoay 90 độ ngược chiều kim đồng hồ
 <img width="992" height="777" alt="image" src="https://github.com/user-attachments/assets/e5b9c671-30ab-4dd1-a389-1bb2964e1f62" />
+
 ---
 
 - Xoay 180 độ: 
 <img width="1032" height="362" alt="image" src="https://github.com/user-attachments/assets/369c080f-ece8-4c11-aad7-a4b79f006470" />
+
 ---
 
 - Cắt ảnh trực tiếp bằng slicing của NumPy.
@@ -219,6 +223,7 @@ crop_top = image[upper: lower,:,:]  # Cắt ảnh theo chiều dọc
 ```
 - KQ:
 <img width="1000" height="177" alt="image" src="https://github.com/user-attachments/assets/867cb4f8-e90e-4b48-856b-45e8ae0654f1" />
+
 ---
 
 ```python
@@ -228,6 +233,7 @@ crop_horizontal = crop_top[: ,left:right,:]  # Cắt tiếp theo chiều ngang
 ```
 - KQ:
 <img width="925" height="229" alt="image" src="https://github.com/user-attachments/assets/57485047-a9e6-4f92-8870-130d88d890c6" />
+
 ---
 
 - Thay đổi pixel trong một vùng bằng cách gán giá trị mới.
@@ -238,6 +244,7 @@ array_sq[upper:lower, left:right, :] = 0  # Gán vùng crop thành màu đen
 ```
 - KQ:
 <img width="1000" height="334" alt="image" src="https://github.com/user-attachments/assets/1c17599c-0013-4088-b95c-b22fe812e635" />
+
 ---
 
 - Vẽ hình chữ nhật bằng cv2.rectangle() và ghi chữ bằng cv2.putText().
@@ -254,6 +261,7 @@ image_draw=cv2.putText(img=image,text='Stuff',org=(10,500),color=(255,255,255),f
 
 - KQ: ghi chữ lên ảnh
 <img width="984" height="577" alt="image" src="https://github.com/user-attachments/assets/90e3f232-41d5-47c5-bf93-8d0fc8e82423" />
+
 ---
 
 ### 4. Kết luận:
