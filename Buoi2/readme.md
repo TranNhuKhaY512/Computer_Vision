@@ -62,7 +62,8 @@ im_flip = ImageOps.flip(image)
 # Lật ảnh theo chiều ngang bằng PIL (left ↔ right)
 im_mirror = ImageOps.mirror(image)
 ```
--KQ: <img width="953" height="561" alt="image" src="https://github.com/user-attachments/assets/d71ca0f3-5680-43b7-8b47-2f429bbd9990" />
+- KQ:
+<img width="953" height="561" alt="image" src="https://github.com/user-attachments/assets/d71ca0f3-5680-43b7-8b47-2f429bbd9990" />
 
 ```python
 # Flip ảnh bằng transpose với mã phép biến đổi = 1 (FLIP_TOP_BOTTOM)
