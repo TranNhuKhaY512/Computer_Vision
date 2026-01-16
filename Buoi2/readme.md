@@ -86,7 +86,6 @@ crop_top = array[upper: lower,:,:]
 <img width="918" height="155" alt="image" src="https://github.com/user-attachments/assets/219df44f-4da0-4abf-b779-43133ac23883" />
 ---
 
-
   + Cắt tiếp theo chiều ngang để lấy vùng chữ nhật:
 ```python
 left = 150
@@ -134,7 +133,6 @@ image_fn.text(xy=(0,0),text="box",fill=(0,0,0))
 ```
 - KQ:
 <img width="991" height="586" alt="image" src="https://github.com/user-attachments/assets/1e5e19d5-067a-4e79-9d38-e7ecf73869df" />
-
 ---
 
 #### 3.2 Thao tác với ảnh cơ bản với open CV (2.2.2_basic_image_manipulation_open_CV.ipynb):
@@ -206,7 +204,6 @@ flip = {
 
 - Xoay 180 độ: 
 <img width="1032" height="362" alt="image" src="https://github.com/user-attachments/assets/369c080f-ece8-4c11-aad7-a4b79f006470" />
-
 ---
 
 - Cắt ảnh trực tiếp bằng slicing của NumPy.
@@ -219,6 +216,7 @@ crop_top = image[upper: lower,:,:]  # Cắt ảnh theo chiều dọc
 - KQ:
 <img width="1000" height="177" alt="image" src="https://github.com/user-attachments/assets/867cb4f8-e90e-4b48-856b-45e8ae0654f1" />
 ---
+
 ```python
 left = 150
 right = 400
@@ -236,7 +234,6 @@ array_sq[upper:lower, left:right, :] = 0  # Gán vùng crop thành màu đen
 ```
 - KQ:
 <img width="1000" height="334" alt="image" src="https://github.com/user-attachments/assets/1c17599c-0013-4088-b95c-b22fe812e635" />
-
 ---
 
 - Vẽ hình chữ nhật bằng cv2.rectangle() và ghi chữ bằng cv2.putText().
