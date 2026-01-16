@@ -4,13 +4,13 @@
 ### GVHD: Đỗ Hữu Quân
 ---
 
-### Giới thiệu chung
+### 1. Giới thiệu chung
 - Bài lab này nhằm mục đích giúp làm quen với các thao tác xử lý ảnh cơ bản trong Python thông qua hai thư viện phổ biến là Pillow (PIL) và OpenCV.
 Thông qua bài thực hành, ta hiểu được cách ảnh được lưu trữ dưới dạng mảng, cách sao chép ảnh để tránh lỗi aliasing, cũng như thực hiện các thao tác như lật ảnh, cắt ảnh, chỉnh sửa pixel, vẽ hình và chèn chữ lên ảnh.
 - Bài gồm 2 file .ipynb:Thao tác ảnh cơ bản bằng PIL, thao tác ảnh cơ bản bằng OpenCV.
 ---
 
-### Công nghệ sử dụng:
+### 2. Công nghệ sử dụng:
 - Ngôn ngữ: Python 3
 - Thư viện
   + NumPy: Dùng để biểu diễn ảnh dưới dạng mảng nhiều chiều và thao tác trực tiếp trên pixel.
@@ -19,8 +19,8 @@ Thông qua bài thực hành, ta hiểu được cách ảnh được lưu trữ
   + OpenCV (cv2): Thư viện xử lý ảnh mạnh, tối ưu hiệu năng, thường dùng trong thị giác máy tính.
 ---
 
-### Cách hoạt động
-#### Thao tác với ảnh cơ bản với PIL: (2.2.1_basic_image_manipulation_PIL.ipynb)
+### 3, Cách hoạt động
+#### 3.1 Thao tác với ảnh cơ bản với PIL: (2.2.1_basic_image_manipulation_PIL.ipynb)
 - Ảnh được đọc bằng Image.open() và chuyển sang NumPy array khi cần thao tác pixel.
 - Code chính:
 ```python
@@ -136,7 +136,7 @@ image_fn.text(xy=(0,0),text="box",fill=(0,0,0))
 
 ---
 
-#### Thao tác với ảnh cơ bản với open CV (2.2.2_basic_image_manipulation_open_CV.ipynb):
+#### 3.2 Thao tác với ảnh cơ bản với open CV (2.2.2_basic_image_manipulation_open_CV.ipynb):
 - Ảnh được đọc bằng cv2.imread() (theo thứ tự màu BGR).
 - Code chính:
 ```python
@@ -254,14 +254,14 @@ image_draw=cv2.putText(img=image,text='Stuff',org=(10,500),color=(255,255,255),f
 <img width="984" height="577" alt="image" src="https://github.com/user-attachments/assets/90e3f232-41d5-47c5-bf93-8d0fc8e82423" />
 ---
 
-### Kết luận:
+### 4. Kết luận:
 Qua bài lab này, ta đã nắm được các thao tác xử lý ảnh cơ bản bằng PIL và OpenCV, đồng thời hiểu rõ hơn về:
 - Cách ảnh được biểu diễn trong máy tính
 - Vấn đề aliasing khi làm việc với mảng ảnh
 - Cách chỉnh sửa ảnh ở mức pixel
 ---
 
-### Tài liệu tham khảo 
+### 5. Tài liệu tham khảo 
 - Tài liệu thực hành – ĐH Văn Lang  
 - Pillow Documentation  
 - OpenCV Documentation
