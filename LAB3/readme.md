@@ -233,7 +233,101 @@ uber_map = folium.Map(location=[10.82841, 106.69990], zoom_start=25)
 
 ---
 
-### 3. Tài liệu tham khảo 
+3. Bài tập LAB01:
+- Kết nối với drive để đọc ảnh
+```python
+from google.colab import drive
+drive.mount('/content/drive')
+
+ # Tạo thư mục lưu model trong Drive
+!mkdir -p "/content/drive/MyDrive/CV_2024_data"
+```
+3.1 Đọc ảnh bằng OpenCV và hiển thị chiều ảnh
+- Dùng cv2.imread()
+- Code chính:
+```python
+img = cv2.imread("/content/drive/MyDrive/CV_2024_data/picture.png")
+print(type(img))
+print(img.shape)
+```
+3.2 Hiển thị ảnh bằng plt.show(thay plt bằng TranNhuKhaY)
+- Dùng để trực quan hóa
+- Code chính:
+```python
+TranNhuKhaY.imshow(img)
+TranNhuKhaY.title("Image using plt.imshow")
+TranNhuKhaY.axis("off")
+TranNhuKhaY.show()
+```
+- KQ:
+<img width="1630" height="622" alt="image" src="https://github.com/user-attachments/assets/00b4bf54-527b-4049-af33-5f29299eddc8" />
+- Cách hiển thị đúng ảnh:
+  - Cách 1: đảo chiều matrix
+  - Code chính:
+```python
+img_rgb = img[:, :, ::-1]
+TranNhuKhaY.imshow(img_rgb)
+TranNhuKhaY.axis("off")
+TranNhuKhaY.show()
+```
+  - KQ :
+<img width="952" height="693" alt="image" src="https://github.com/user-attachments/assets/d0fe8ec6-6fe4-484e-b5e6-d010dd828460" />
+
+  - Cách 2: convert chế độ màu
+  - Code chính:
+```python
+img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+TranNhuKhaY.imshow(img_rgb)
+TranNhuKhaY.axis("off")
+TranNhuKhaY.show()
+```
+  - KQ:
+<img width="931" height="692" alt="image" src="https://github.com/user-attachments/assets/6dc0b885-2c13-485a-8b6a-356f7373b9fe" />
+
+3.3 Phóng to ảnh:
+- Dùng cv2.resize()
+- Code chính:
+```python
+h, w = img.shape[:2]
+img_resize = cv2.resize(img, (w*2, h*2))
+TranNhuKhaY.imshow(cv2.cvtColor(img_resize, cv2.COLOR_BGR2RGB))
+```
+- KQ:
+<img width="1124" height="844" alt="image" src="https://github.com/user-attachments/assets/1f57bce0-8f14-4d3f-9f6f-aa22f10c5ca5" />
+
+3.4 Crop ảnh:
+- Crop bằng slicing NumPy, cắt ảnh: y1:y2, x1:x2
+- Code chính:
+```python
+crop_img = img[100:300, 150:400]
+
+TranNhuKhaY.imshow(cv2.cvtColor(crop_img, cv2.COLOR_BGR2RGB))
+```
+- KQ:
+<img width="1009" height="988" alt="image" src="https://github.com/user-attachments/assets/a5901c85-8e3a-4ff3-a161-c8bfe697fd19" />
+
+3.5 Ghép 2 ảnh (ngang & dọc)
+- Ghép ngang 
+- Code chính:
+```python
+import numpy as np
+horizontal = np.hstack((img1, img2))
+TranNhuKhaY.imshow(cv2.cvtColor(horizontal, cv2.COLOR_BGR2RGB))
+```
+- KQ:
+<img width="1175" height="952" alt="image" src="https://github.com/user-attachments/assets/30500b18-db81-4e1c-90ec-2c99f7c56c66" />
+
+- Ghép dọc
+- Code chính:
+```python
+vertical = np.vstack((img1, img2))
+
+TranNhuKhaY.imshow(cv2.cvtColor(vertical, cv2.COLOR_BGR2RGB))
+```
+- KQ :
+<img width="1125" height="849" alt="image" src="https://github.com/user-attachments/assets/b7dd93d0-2755-4268-940d-2cbc086fd196" />
+
+###  Tài liệu tham khảo 
 - Tài liệu thực hành – ĐH Văn Lang  
 - Pillow Documentation  
 - OpenCV Documentation
