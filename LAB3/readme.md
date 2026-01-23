@@ -37,6 +37,7 @@ intensity_values = np.array([x for x in range(hist.shape[0])]) # vẽ
 ```
 - KQ:
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2f93085f-82f1-4816-8f85-ac51a834362d" />
+
 ---
 
 1.4. Áp dụng các phép biến đổi cường độ ảnh
@@ -53,6 +54,7 @@ print("image negatives\n", neg_toy_image)
 ```
 - KQ:
 <img width="1148" height="542" alt="image" src="https://github.com/user-attachments/assets/8f23b793-2c9c-4add-b8a6-8f7c010698e6" />
+
 ---
 
 1.4.2 Brightness & Contrast Adjustment - phép biến đổi độ sáng & độ tương phản tuyến tính:
@@ -71,6 +73,8 @@ new_image = cv2.convertScaleAbs(goldhill, alpha=alpha, beta=beta)
 <img width="1641" height="681" alt="image" src="https://github.com/user-attachments/assets/928db045-774a-4929-b3f4-8b0ba4827ac9" />
 <img width="1050" height="570" alt="image" src="https://github.com/user-attachments/assets/6da995b5-a7a4-4575-bde5-5078aa913ac6" />
 
+---
+
 1.4.3 Histogram Equalization - cân bằng biểu đồ:
 - Dùng để làm tăng độ tương phản của hình ảnh bằng cách mở rộng phạm vi của các pixel thang độ xám.
 - Code chính: 
@@ -82,6 +86,7 @@ new_image = cv2.equalizeHist(zelda)
 <img width="930" height="457" alt="image" src="https://github.com/user-attachments/assets/84a1b427-4d5f-48c4-872b-95fcaa17bbca" />
 <img width="925" height="532" alt="image" src="https://github.com/user-attachments/assets/f4782b37-fd95-48f9-a534-8ee7942f1af7" />
 
+---
 
 1.4.4 Thresholding and Simple Segmentation
 - Dùng để phân đoạn , trích xuất các đối tượng từ một bức ảnh.
@@ -114,6 +119,7 @@ ret, new_image = cv2.threshold(image,86,255,cv2.THRESH_TRUNC)
 ```
 - KQ:
 <img width="751" height="680" alt="image" src="https://github.com/user-attachments/assets/c94afefc-63b7-4584-b16e-07653d9f8f7a" />
+
 ---
 
 - THRESHOLDING_OTSU: là phương pháp tránh việc chọn một giá trị và tự động xác định giá trị đó bằng sử dụng biểu đồ tần số.
@@ -123,6 +129,7 @@ ret, otsu = cv2.threshold(image,0,255,cv2.THRESH_OTSU)
 ```
 - KQ:
 <img width="759" height="666" alt="image" src="https://github.com/user-attachments/assets/24d34b1c-417e-43c1-aa70-5fa96ab84b98" />
+
 --- 
 
 #### 2. Giới thiệu và thao tác với tập dữ liệu    Uber_basic_image_manipulation_open_CV.ipynb):
@@ -136,6 +143,7 @@ uber_data.info()
 ```
 - KQ :
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/345bc3e0-5f51-43f0-b18c-8d3f366de972" />
+
 ---
 
 2.2. Xử lý dữ liệu thời gian (Datetime):
@@ -148,6 +156,7 @@ hourly_data = hourly_data.sort_index()
 ```
 - KQ:
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9ffeba2b-64aa-42ca-a169-feeed92c0d9a" />
+
 ---
 
 <img width="1827" height="402" alt="image" src="https://github.com/user-attachments/assets/9afe34d9-f574-41ff-952f-902ad10de130" />
@@ -209,6 +218,7 @@ plt.show()
 ```
 - KQ:
 <img width="1182" height="618" alt="image" src="https://github.com/user-attachments/assets/4e41e574-d00f-4927-8868-431900de9dfe" />
+
 ---
 
 2.7 Bản đồ & Heatmap với Folium
@@ -220,9 +230,8 @@ uber_map = folium.Map(location=[10.82841, 106.69990], zoom_start=25)
 ```
 - KQ:
 <img width="1442" height="823" alt="image" src="https://github.com/user-attachments/assets/2c86ce43-14ee-40f8-af13-32b5c55cc3e3" />
+
 ---
-
-
 
 ### 3. Tài liệu tham khảo 
 - Tài liệu thực hành – ĐH Văn Lang  
