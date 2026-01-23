@@ -262,7 +262,7 @@ TranNhuKhaY.show()
 - KQ:
 <img width="1630" height="622" alt="image" src="https://github.com/user-attachments/assets/00b4bf54-527b-4049-af33-5f29299eddc8" />
 - Cách hiển thị đúng ảnh:
-  - Cách 1: đảo chiều matrix
+  - Cách 1: đảo chiều matrix.
   - Code chính:
 ```python
 img_rgb = img[:, :, ::-1]
