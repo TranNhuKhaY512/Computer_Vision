@@ -13,6 +13,7 @@
 - Bài gồm 2 file .ipynb:
   - 2.5.1_Spatial_Filtering-PIL.ipynb
   - 2.5.1_Spatial_Filtering.ipynb
+  - 2374802010582_TranNhuKhaY_CV0101_Lab3.ipynb
 ---
 
 ### Công nghệ sử dụng
