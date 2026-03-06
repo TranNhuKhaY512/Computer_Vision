@@ -49,7 +49,7 @@ File: `2.5.1_Spatial_Filtering-PIL.ipynb`
 image = Image.open("lenna.png")
 ```
 
-2. **Áp dụng bộ lọc **
+2. **Áp dụng bộ lọc** :
    Các bộ lọc được áp dụng trực tiếp trên pixel của ảnh thông qua kernel :
    - Linear Filtering (Lọc tuyến tính) : sử dụng **kernel convolution** để biến đổi giá trị pixel của ảnh dựa trên các pixel lân cận.
 
