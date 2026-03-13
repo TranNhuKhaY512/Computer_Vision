@@ -1,1 +1,195 @@
+# Thực hành môn Computer Vision
+## KEYPOINT DETECTION
+### Sinh viên thực hiện
+**Trần Như Khả Ý -- 2374802010582**
+### GVHD: **Đỗ Hữu Quân**
 
+# Giới thiệu
+Notebook này thực hiện nhiều kỹ thuật quan trọng trong **ComputerVision**, bao gồm:
+- Feature Detection – Phát hiện đặc trưng trong ảnh  
+- Corner Detection – Phát hiện điểm góc  
+- Blob Detection – Phát hiện vùng blob trong ảnh  
+- SIFT / ORB Feature Extraction – Trích xuất đặc trưng ảnh  
+- Image Matching – So khớp đặc trưng giữa các ảnh  
+- Image Stitching – Ghép ảnh panorama  
+- Stereo Vision – Ước lượng độ sâu ảnh
+
+# Công nghệ sử dụng
+### Ngôn ngữ
+-   **Python 3**
+### Thư viện
+-   **OpenCV (cv2)** -- Thư viện xử lý ảnh và thị giác máy tính mạnh mẽ.
+-   **NumPy** -- Thao tác với mảng và ma trận trong xử lý ảnh.
+-   **Matplotlib** -- Hiển thị và trực quan hóa ảnh.
+-   **Scikit-learn** -- Sử dụng thuật toán **K-Means clustering** để
+    phân cụm đặc trưng.
+    
+# Cách hoạt động 
+## 1. Đọc và hiển thị ảnh
+Ảnh được đọc bằng OpenCV và hiển thị bằng Matplotlib.
+
+``` python
+img = cv2.imread('hinh1.jpg')
+plt.imshow(img[:,:,::-1])
+```
+Do OpenCV đọc ảnh theo định dạng **BGR**, cần chuyển sang **RGB** khi
+hiển thị.
+
+
+
+## 2. Harris Corner Detection
+Thuật toán **Harris Corner** được sử dụng để phát hiện các điểm góc
+trong ảnh.
+``` python
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+gray = np.float32(gray)
+
+dst = cv2.cornerHarris(gray,2,3,0.04)
+```
+
+Ứng dụng:
+-   tracking
+-   object detection
+-   image matching
+
+
+## 3. Difference of Gaussians (DoG)
+DoG được sử dụng để phát hiện các vùng có thay đổi mạnh về cấu trúc
+trong ảnh.
+``` python
+blur1 = cv2.GaussianBlur(gray,(5,5),1)
+blur2 = cv2.GaussianBlur(gray,(9,9),2)
+
+dog = blur1 - blur2
+```
+
+Ứng dụng:
+-   blob detection
+-   feature detection
+-   SIFT algorithm
+
+
+## 4. Laplacian Edge Detection
+Bộ lọc **Laplacian** được sử dụng để phát hiện biên trong ảnh.
+``` python
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+log = cv2.Laplacian(gray, cv2.CV_64F)
+```
+
+## 5. SIFT Feature Detection
+Thuật toán **SIFT (Scale-Invariant Feature Transform)** được sử dụng để
+phát hiện và mô tả các điểm đặc trưng.
+``` python
+sift = cv2.SIFT_create()
+kp, des = sift.detectAndCompute(gray,None)
+```
+
+Ưu điểm:
+-   bất biến theo **scale**
+-   bất biến theo **rotation**
+-   ổn định với thay đổi **ánh sáng**
+
+Ứng dụng:
+-   image matching
+-   object recognition
+-   panorama stitching
+
+## 6. Blob Detection
+Blob là các vùng ảnh có cường độ khác biệt so với vùng xung quanh.
+``` python
+params = cv2.SimpleBlobDetector_Params()
+params.filterByArea = True
+params.minArea = 100
+
+detector = cv2.SimpleBlobDetector_create(params)
+```
+Ứng dụng:
+-   medical image analysis
+-   object detection
+-   tracking
+
+## 7. Clustering Features bằng K-Means
+Đặc trưng SIFT được phân cụm bằng **K-Means**.
+
+``` python
+from sklearn.cluster import KMeans
+
+kmeans = KMeans(n_clusters=50)
+kmeans.fit(des)
+```
+
+Ứng dụng:
+-   Bag of Visual Words
+-   Image classification
+-   Visual search
+
+## 8. Image Stitching
+OpenCV hỗ trợ ghép nhiều ảnh thành **panorama**.
+``` python
+stitcher = cv2.Stitcher_create()
+status, pano = stitcher.stitch([img1, img2])
+```
+Ứng dụng:
+-   panorama photography
+-   drone mapping
+-   satellite imagery
+
+## 9. ORB Feature Matching
+ORB là thuật toán phát hiện đặc trưng **nhanh và nhẹ hơn SIFT**.
+
+``` python
+orb = cv2.ORB_create()
+
+kp1, des1 = orb.detectAndCompute(img1,None)
+kp2, des2 = orb.detectAndCompute(img2,None)
+```
+Sau đó dùng **Brute Force Matcher** để so khớp đặc trưng.
+
+## 10. Stereo Vision (Depth Estimation)
+Stereo Vision dùng hai ảnh để ước lượng **độ sâu (depth)**.
+``` python
+stereo = cv2.StereoBM_create(numDisparities=16, blockSize=15)
+
+disparity = stereo.compute(left,right)
+```
+
+Ứng dụng:
+-   robot navigation
+-   autonomous vehicles
+-   3D reconstruction
+
+## 11. Histogram Comparison
+Histogram giúp so sánh phân bố màu giữa hai ảnh.
+
+``` python
+hist1 = cv2.calcHist([img1],[0,1,2],None,[8,8,8],[0,256,0,256,0,256])
+hist2 = cv2.calcHist([img2],[0,1,2],None,[8,8,8],[0,256,0,256,0,256])
+```
+Ứng dụng:
+-   image similarity
+-   image retrieval
+-   dataset analysis
+
+
+# Kết luận
+
+Notebook giúp thực hành nhiều kỹ thuật quan trọng trong **Computer
+Vision**:
+
+-   Harris Corner Detection\
+-   Difference of Gaussians\
+-   Laplacian Edge Detection\
+-   SIFT Feature Detection\
+-   Blob Detection\
+-   Feature Clustering\
+-   Image Stitching\
+-   ORB Matching\
+-   Stereo Vision\
+-   Histogram Comparison
+
+# Tài liệu tham khảo
+
+-   OpenCV Documentation\
+-   Scikit-learn Documentation\
+-   Digital Image Processing -- Gonzalez & Woods\
+-   Computer Vision: Algorithms and Applications -- Richard Szeliski
