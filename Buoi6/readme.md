@@ -25,7 +25,8 @@ Notebook này thực hiện nhiều kỹ thuật quan trọng trong **ComputerVi
 -   **Matplotlib** -- Hiển thị và trực quan hóa ảnh.
 -   **Scikit-learn** -- Sử dụng thuật toán **K-Means clustering** để
     phân cụm đặc trưng.
-    ---
+    
+---
     
 # Cách hoạt động 
 ## 1. Đọc và hiển thị ảnh
