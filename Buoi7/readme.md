@@ -4,14 +4,14 @@
 
 ---
 
-# Công nghệ sử dụng
-### Ngôn ngữ
+### Công nghệ sử dụng
+#### Ngôn ngữ
 -   **Python 3**
-### Thư viện
--   **OpenCV (cv2)** -- Thư viện xử lý ảnh và thị giác máy tính mạnh mẽ.
--   **NumPy** -- Thao tác với mảng và ma trận trong xử lý ảnh.
--   **Matplotlib** -- Hiển thị và trực quan hóa ảnh.
--   **Scikit-learn** -- Sử dụng thuật toán **K-Means clustering** để
+#### Thư viện
+-   **OpenCV (cv2)** : Thư viện xử lý ảnh và thị giác máy tính mạnh mẽ.
+-   **NumPy** : Thao tác với mảng và ma trận trong xử lý ảnh.
+-   **Matplotlib** : Hiển thị và trực quan hóa ảnh.
+-   **Scikit-learn** : Sử dụng thuật toán **K-Means clustering** để
     phân cụm đặc trưng.
 
 ---
