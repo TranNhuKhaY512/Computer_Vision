@@ -14,9 +14,10 @@
 ## Cách hoạt động
 1. **Khởi tạo và Định vị:** dùng `os.getcwd()` để xác định thư mục gốc đang làm việc, để trỏ đường dẫn tới file model và file video gốc.
 2. **Nạp Mô hình vào Bộ nhớ (Load Model):** Khởi tạo `VideoObjectDetection`, khai báo kiến trúc là RetinaNet và nạp file trọng số `.pth`.
-3. **Giải mã Video (Video Decoding):** Đọc file video đầu vào (`39890-423345734.mp4`) và tách video đó ra thành hàng loạt các bức ảnh tĩnh liên tiếp (gọi là các frames).
-4. **Nhận diện và Đóng khung (Detection & Bounding Box):** Đưa lần lượt từng frame qua mạng nơ-ron RetinaNet. Thuật toán sẽ quét qua bức ảnh, phát hiện tọa độ các vật thể, vẽ khung chữ nhật (bounding box) bao quanh chúng và dán nhãn (ví dụ: "person 99%", "car 85%"). Tính năng `log_progress=True` sẽ in tiến trình này ra terminal.
-5. **Mã hóa và Xuất Video (Video Encoding):** Sau khi xử lý xong, chương trình sẽ ghép các frames đã được vẽ khung nhận diện lại với nhau để tạo thành một video hoàn chỉnh. Kết quả được lưu xuống ổ cứng với tên `video_detection_output.mp4` ở tốc độ 5 khung hình/giây (`frames_per_second=5`).
+3. Sử dụng kiến trúc RetinaNet với bộ trọng số huấn luyện sẵn retinanet_resnet50_fpn_coco-eeacb38b.pth được tham khảo từ tài liệu hướng dẫn trên GitHub của thư viện ImageAI do Olafenwa Moses phát triển.
+4. **Giải mã Video (Video Decoding):** Đọc file video đầu vào (`39890-423345734.mp4`) được tải về từ Pixabay và tách video đó ra thành hàng loạt các bức ảnh tĩnh liên tiếp (gọi là các frames).
+5. **Nhận diện và Đóng khung (Detection & Bounding Box):** Đưa lần lượt từng frame qua mạng nơ-ron RetinaNet. Thuật toán sẽ quét qua bức ảnh, phát hiện tọa độ các vật thể, vẽ khung chữ nhật (bounding box) bao quanh chúng và dán nhãn (ví dụ: "person 99%", "car 85%"). Tính năng `log_progress=True` sẽ in tiến trình này ra terminal.
+6. **Mã hóa và Xuất Video (Video Encoding):** Sau khi xử lý xong, chương trình sẽ ghép các frames đã được vẽ khung nhận diện lại với nhau để tạo thành một video hoàn chỉnh. Kết quả được lưu xuống ổ cứng với tên `video_detection_output.mp4` ở tốc độ 5 khung hình/giây (`frames_per_second=5`).
 - Code chính:
 ```python
 
@@ -47,3 +48,5 @@ print(video_path)
 - Scikit-learn Documentation
 - Digital Image Processing -- Gonzalez & Woods
 - Computer Vision: Algorithms and Applications -- Richard Szeliski
+- Pixabay, "Video bản quyền miễn phí chủ đề Lễ hội.", "https://pixabay.com/vi/videos/search/lễ%20hội/"(Dữ liệu video đầu vào sử dụng trong quá trình thử nghiệm và đánh giá mô hình).
+- O. Moses, "Video Object Detection - ImageAI," GitHub: "https://github.com/OlafenwaMoses/ImageAI/blob/master/imageai/Detection/VIDEO.md" (Tham khảo tài liệu hướng dẫn tích hợp và tải trọng số mô hình nhận diện retinanet_resnet50_fpn_coco-eeacb38b.pth).
