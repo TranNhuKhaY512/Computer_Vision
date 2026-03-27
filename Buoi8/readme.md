@@ -1,4 +1,4 @@
-<img width="2560" height="1440" alt="Screenshot 2026-03-27 213314" src="https://github.com/user-attachments/assets/6285e785-a0be-4bbc-952e-80be8d96f8d1" />## THỰC HÀNH MÔN COMPUTER VISION
+## THỰC HÀNH MÔN COMPUTER VISION
 ### LAB VIDEO OBJECT DECTECTION
 #### SVTH: TRẦN NHƯ KHẢ Ý - 2374802010582
 #### GVHD : ĐỖ HỮU QUÂN 
